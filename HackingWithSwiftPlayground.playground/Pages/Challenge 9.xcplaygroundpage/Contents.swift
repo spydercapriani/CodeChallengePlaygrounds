@@ -13,12 +13,9 @@
 import Foundation
 
 func challenge9(input: String) -> Bool {
-    let alphabet = "abcdefghijklmnopqrstuvwxyz"
-    
-    let (alphabetSet, phraseSet) = (Set(alphabet.characters), Set(input.lowercased().characters))
-    let resultSet = alphabetSet.subtracting(phraseSet)
-    
-    return resultSet.count == 0 ? true : false
+    let set = Set(input.lowercased())
+    let letters = set.filter { $0 >= "a" && $0 <= "z" }
+    return letters.count == 26
 }
 
 //: Test Cases
