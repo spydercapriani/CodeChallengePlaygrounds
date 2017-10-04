@@ -5,7 +5,7 @@
  
  Tip: If you can solve this challenge without a for-in loop, you can consider it “tricky” rather than “easy”.
  
- # Hints
+ ## Hints:
  * Sets are great at removing duplicates, but bad at retaining order.
  * Foundation does have a way of forcing sets to retain their order, but you need to handle the typecasting.
  * You can create strings out of character arrays.

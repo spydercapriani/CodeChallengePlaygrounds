@@ -3,7 +3,7 @@
  # Challenge 4: Does one string contain another?
  Write your own version of the contains() method on String that ignores letter case, and without using the existing contains() method.
  
- ## Hints
+ ## Hints:
  * You should write this as an extension to String.
  * You can’t use contains(), but there are other methods that do similar things.
  * Try the range(of:) method.
