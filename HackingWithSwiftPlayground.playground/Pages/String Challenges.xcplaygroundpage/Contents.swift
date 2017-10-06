@@ -136,7 +136,68 @@ extension String {
         return differences <= 3
     }
     
+    /*: # Challenge 12: Find longest prefix
+     Write a function that accepts a string of words with a similar prefix, separated by spaces, and returns the longest substring that prefixes all words.
+     */
+    func getLongestPrefix() -> String {
+        // Get list of words
+        let words = self.components(separatedBy: " ")
+        // Ensure word list has at least one item
+        guard let first = words.first else {
+            return ""
+        }
+        
+        var currentPrefix = ""
+        var bestPrefix = ""
+        
+        // Iterate through letters of first word
+        for letter in first {
+            // Slowly generate a prefix
+            currentPrefix.append(letter)
+            // Iterate through word list
+            for word in words {
+                // Check if other words contain currently generated prefix
+                if !word.hasPrefix(currentPrefix) {
+                    // Return best prefix found as soon as currently generated prefix is no longer able to be found (breaking out of for loop)
+                    return bestPrefix
+                }
+            }
+            // Update the best prefix (this will only get updated as long as for loop hasn't already been broken out of)
+            bestPrefix = currentPrefix
+        }
+        // Returns entire word in the event all words are alike
+        return bestPrefix
+    }
     
+    /*: # Challenge 13: Run-length encoding
+     Write a function that accepts a string as input, then returns how often each letter is repeated in a single run, taking case into account.
+     
+     Tip: This approach is used in a simple lossless compression technique called run-length encoding.
+     */
+    func runLengthEncoding() -> String {
+        var currentLetter: Character?
+        var runLengthString = ""
+        var letterCounter = 0
+        
+        
+        for letter in self {
+            if letter == currentLetter {
+                letterCounter += 1
+            }else {
+                if let current = currentLetter {
+                    runLengthString.append("\(current)\(letterCounter)")
+                }
+                
+                currentLetter = letter
+                letterCounter = 1
+            }
+        }
+        if let current = currentLetter {
+            runLengthString.append("\(current)\(letterCounter)")
+        }
+        
+        return runLengthString
+    }
 }
 
 //: Challenge 1 Test Cases
@@ -211,5 +272,17 @@ assert("Clamp".onlyDifferentByThreeOrLess(comparison: "Grans") == false, "Challe
 assert("Clamp".onlyDifferentByThreeOrLess(comparison: "Clam") == false, "Challenge 11 failed!")
 assert("clamp".onlyDifferentByThreeOrLess(comparison: "maple") == false, "Challenge 11 failed!")
 print("Challenge 11 completed!")
+
+//: Challenge 12 Test Cases
+assert("swift switch swill swim".getLongestPrefix() == "swi", "Challenge 12 failed!")
+assert("flip flap flop".getLongestPrefix() == "fl", "Challenge 12 failed!")
+assert("flip flip flip".getLongestPrefix() == "flip", "Challenge 12 failed!")
+print("Challenge 12 completed!")
+
+//: Challenge 13 Test Cases
+assert("aabbcc".runLengthEncoding() == "a2b2c2", "Challenge 13 failed!")
+assert("aaabaaabaaa".runLengthEncoding() == "a3b1a3b1a3", "Challenge 13 failed!")
+assert("aaAAaa".runLengthEncoding() == "a2A2a2", "Challenge 13 failed!")
+print("Challenge 13 completed!")
 
 //: [Next](@next)
