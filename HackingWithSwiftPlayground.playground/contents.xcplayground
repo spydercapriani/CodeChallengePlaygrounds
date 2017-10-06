@@ -3,6 +3,5 @@
     <pages>
         <page name='FizzBuzz Challenge'/>
         <page name='String Challenges'/>
-        <page name='Challenge 10'/>
     </pages>
 </playground>

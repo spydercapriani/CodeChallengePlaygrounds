@@ -112,6 +112,31 @@ extension String {
         
         return (vowelCount, consonantCount)
     }
+    
+    /*: # Challenge 11: Three different letters
+     Write a function that accepts two strings, and returns true if they are identical in length but have no more than three different letters, taking case and string order into account.
+     */
+    func onlyDifferentByThreeOrLess(comparison: String) -> Bool {
+        guard self.count == comparison.count else {
+            // Not identical in length
+            return false
+        }
+        
+        let string1 = Array(self)
+        let string2 = Array(comparison)
+        
+        var differences = 0
+        
+        for (index, letter) in string1.enumerated() {
+            if letter != string2[index] && differences < 4 {
+                differences += 1
+            }
+        }
+        
+        return differences <= 3
+    }
+    
+    
 }
 
 //: Challenge 1 Test Cases
@@ -177,5 +202,14 @@ print("Challenge 9 completed!")
 assert("Swift Coding Challenges".countVowelsAndConsonants() == (6, 15), "Challenge 10 failed!")
 assert("Mississippi".countVowelsAndConsonants() == (4, 7), "Challenge 10 failed!")
 print("Challenge 10 completed!")
+
+//: Challenge 11 Test Cases
+assert("Clamp".onlyDifferentByThreeOrLess(comparison: "Cramp") == true, "Challenge 11 failed!")
+assert("Clamp".onlyDifferentByThreeOrLess(comparison: "Crams") == true, "Challenge 11 failed!")
+assert("Clamp".onlyDifferentByThreeOrLess(comparison: "Grams") == true, "Challenge 11 failed!")
+assert("Clamp".onlyDifferentByThreeOrLess(comparison: "Grans") == false, "Challenge 11 failed!")
+assert("Clamp".onlyDifferentByThreeOrLess(comparison: "Clam") == false, "Challenge 11 failed!")
+assert("clamp".onlyDifferentByThreeOrLess(comparison: "maple") == false, "Challenge 11 failed!")
+print("Challenge 11 completed!")
 
 //: [Next](@next)
