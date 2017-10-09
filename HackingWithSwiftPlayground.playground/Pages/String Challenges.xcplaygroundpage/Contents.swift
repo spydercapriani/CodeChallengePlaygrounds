@@ -128,8 +128,12 @@ extension String {
         var differences = 0
         
         for (index, letter) in string1.enumerated() {
-            if letter != string2[index] && differences < 4 {
-                differences += 1
+            if letter != string2[index] {
+                if differences < 4 {
+                    differences += 1
+                }else {
+                    return differences <= 3
+                }
             }
         }
         

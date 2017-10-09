@@ -3,5 +3,6 @@
     <pages>
         <page name='FizzBuzz Challenge'/>
         <page name='String Challenges'/>
+        <page name='Sorting Algorithms'/>
     </pages>
 </playground>
