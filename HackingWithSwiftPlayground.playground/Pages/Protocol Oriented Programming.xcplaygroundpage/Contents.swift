@@ -1,11 +1,5 @@
 //: [Previous](@previous)
 
-import Foundation
-import UIKit
-import PlaygroundSupport
-
-//: Abstract Classes vs Interfaces
-
 /*:
  # Interfaces
  * Only events, delegates, properties, and methods can exist
@@ -32,6 +26,10 @@ import PlaygroundSupport
  for an object).
  
  */
+
+import Foundation
+import UIKit
+import PlaygroundSupport
 
 //: Example of taking a POP approach
 public protocol canBlockView {
