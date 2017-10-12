@@ -6,5 +6,9 @@
         <page name='Sorting Algorithms'/>
         <page name='Version Testing'/>
         <page name='Protocol Oriented Programming'/>
+        <page name='Reference Types'/>
+        <page name='Value Types'/>
+        <page name='Property Observers'/>
+        <page name='Computed Properties'/>
     </pages>
 </playground>

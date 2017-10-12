@@ -14,13 +14,13 @@ func getLatestVersion(version1: String, version2: String) -> String {
         }
     }
     
-    return "same versions"
+    return version1
 }
 
 //: Test Cases
 assert(getLatestVersion(version1: "12.14.10", version2: "12.10.12") == "12.14.10", "Version Challenge failed!")
 assert(getLatestVersion(version1: "12.14.10a", version2: "12.14.10c") == "12.14.10c", "Version Challenge failed!")
-assert(getLatestVersion(version1: "12.14.10", version2: "12.14.10") == "same versions", "Version Challenge failed!")
+assert(getLatestVersion(version1: "12.14.10", version2: "12.14.10") == "12.14.10", "Version Challenge failed!")
 print("Tests completed successfully!")
 
 

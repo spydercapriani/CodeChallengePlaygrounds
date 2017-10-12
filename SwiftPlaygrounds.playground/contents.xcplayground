@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='Computed Properties'/>
+        <page name='Property Observers'/>
+        <page name='Reference Types'/>
+        <page name='Polymorphism'/>
+        <page name='Value Types'/>
+        <page name='Closures'/>
+    </pages>
+</playground>
