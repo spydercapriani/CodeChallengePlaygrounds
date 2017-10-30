@@ -1,5 +1,15 @@
-//: Playground - noun: a place where people can play
+//: Arrays: Left Rotation
 
-import UIKit
+import Foundation
 
-var str = "Hello, playground"
+let sampleSize = 5
+let rotations = 4
+var sampleArray = ["1", "2", "3", "4", "5"]
+
+for index in 1...sampleSize {
+    let newLocation = (index + ((sampleSize - 1) - rotations)) % sampleSize
+    
+    sampleArray[newLocation] = String(index)
+}
+
+print(sampleArray.joined(separator: " "))
