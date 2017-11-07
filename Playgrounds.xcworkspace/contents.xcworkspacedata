@@ -2,7 +2,11 @@
 <Workspace
    version = "1.0">
    <FileRef
+<<<<<<< HEAD
       location = "group:DataTransformations.playground">
+=======
+      location = "group:HackerRankPlayground.playground">
+>>>>>>> d766ad695b477aa3feb12d8240e54bc020a032fe
    </FileRef>
    <FileRef
       location = "group:SwiftPlaygrounds.playground">
