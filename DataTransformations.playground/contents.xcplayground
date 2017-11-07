@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='Map'/>
+        <page name='Filter'/>
+        <page name='Reduce'/>
+        <page name='FlatMap'/>
+        <page name='Chaining'/>
+    </pages>
+</playground>
