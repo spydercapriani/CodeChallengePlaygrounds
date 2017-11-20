@@ -6,5 +6,6 @@
         <page name='Factorial'/>
         <page name='Reversed String'/>
         <page name='Letter Changes'/>
+        <page name='Simple Adding'/>
     </pages>
 </playground>
