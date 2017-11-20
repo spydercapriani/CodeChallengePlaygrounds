@@ -9,5 +9,6 @@
         <page name='Simple Adding'/>
         <page name='Letter Capitalize'/>
         <page name='Longest Word'/>
+        <page name='Simple Symbols'/>
     </pages>
 </playground>
