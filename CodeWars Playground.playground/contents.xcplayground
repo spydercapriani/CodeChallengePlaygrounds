@@ -7,5 +7,7 @@
         <page name='Reversed String'/>
         <page name='Letter Changes'/>
         <page name='Simple Adding'/>
+        <page name='Letter Capitalize'/>
+        <page name='Longest Word'/>
     </pages>
 </playground>
