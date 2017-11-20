@@ -10,5 +10,6 @@
         <page name='Letter Capitalize'/>
         <page name='Longest Word'/>
         <page name='Simple Symbols'/>
+        <page name='Check Nums'/>
     </pages>
 </playground>
