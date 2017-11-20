@@ -37,7 +37,7 @@ func LetterChanges(_ str: String) -> String {
 assert(LetterChanges("hello*3") == "Ifmmp*3", "\(LetterChanges("hello*3")) does not equal Ifmmp*3")
 assert(LetterChanges("fun times!") == "gvO Ujnft!", "\(LetterChanges("fun times!")) does not equal gvO Ujnft!")
 assert(LetterChanges("z") == "A", "Cyclical Alphabet error")
-assert(LetterChanges("Z") == "A", "Cyclical Alphabet error")
+assert(LetterChanges("fUn timeZ!") == "gVO UjnfA!", "Cyclical Alphabet error")
 print("All Tests Passed!")
 
 LetterChanges("B")
