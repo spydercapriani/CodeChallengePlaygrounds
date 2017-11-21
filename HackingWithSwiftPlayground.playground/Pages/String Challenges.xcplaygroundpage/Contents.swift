@@ -202,6 +202,46 @@ extension String {
         
         return runLengthString
     }
+    
+    /*: # Challenge 14: String Permutations
+     Write a function that prints all possible permutations of a given input string.
+     
+     Tip: A string permutation is any given rearrangement of its letters, for example “boamtw” is a permutation of “wombat”.”
+     */
+    func stringPermutations() -> [String] {
+        var scratch = Array(self)
+        var result: [String] = []
+        
+        // Heap's algorithm
+        func heap(_ n: Int) {
+            if n == 1 {
+                result.append(String(scratch))
+                return
+            }
+            
+            for i in 0..<n-1 {
+                heap(n-1)
+                let j = (n%2 == 1) ? 0 : i
+                scratch.swapAt(j, n-1)
+            }
+            heap(n-1)
+        }
+        
+        heap(scratch.count)
+        return result
+    }
+    
+    /*: # Challenge 15: Reverse the words in a string
+        Write a function that returns a string with each of its words reversed
+        but in the original order, without using a loop.
+     */
+    func reversedSentence() -> String {
+        let words = self.components(separatedBy: .whitespaces)
+        
+        return words.map {
+            String($0.reversed())
+        }.joined(separator: " ")
+    }
 }
 
 //: Challenge 1 Test Cases
@@ -288,5 +328,17 @@ assert("aabbcc".runLengthEncoding() == "a2b2c2", "Challenge 13 failed!")
 assert("aaabaaabaaa".runLengthEncoding() == "a3b1a3b1a3", "Challenge 13 failed!")
 assert("aaAAaa".runLengthEncoding() == "a2A2a2", "Challenge 13 failed!")
 print("Challenge 13 completed!")
+
+//: Challenge 14 Test Cases
+assert("a".stringPermutations().elementsEqual(["a"]), "Challenge 14 failed!")
+assert("ab".stringPermutations().elementsEqual(["ab", "ba"]), "Challenge 14 failed!")
+assert("abc".stringPermutations().sorted().elementsEqual(["abc", "acb", "bac", "bca", "cab", "cba"].sorted()), "Challenge 14 failed!")
+assert("wombat".stringPermutations().count == 720, "Challenge 14 failed!")
+print("Challenge 14 completed!")
+
+//: Challenge 15 Test Cases
+assert("Swift Coding Challenges".reversedSentence() == "tfiwS gnidoC segnellahC", "Challenge 15 failed!")
+assert("The quick brown fox".reversedSentence() == "ehT kciuq nworb xof", "Challenge 15 failed!")
+print("Challenge 15 completed!")
 
 //: [Next](@next)
